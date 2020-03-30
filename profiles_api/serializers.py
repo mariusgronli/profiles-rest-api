@@ -1,12 +1,6 @@
 from rest_framework import serializers
 from profiles_api import models
 
-class HelloSerializer(serializers.Serializer):
-    """
-    Serializing a name field for testing our APIVIEW
-    """
-    name = serializers.CharField(max_length=10)
-
 class UserProfileSerializer(serializers.ModelSerializer):
     """Serializer for a user profile"""
     class Meta:
@@ -35,3 +29,10 @@ class UserProfileSerializer(serializers.ModelSerializer):
             instance.set_password(password)
 
         return super().update(instance, validated_data)
+
+
+# class HelloSerializer(serializers.Serializer):
+#     """
+#     Serializing a name field for testing our APIVIEW
+#     """
+#     name = serializers.CharField(max_length=10)
